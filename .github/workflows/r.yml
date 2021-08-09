@@ -24,6 +24,13 @@ jobs:
           devtools::install_github("Azure/Microsoft365R")
         shell: Rscript {0}
 
+      - name: Show environment variable
+        shell: bash
+        env:
+          GREET: "Hello"
+        run: |
+          echo $GREET
+
       - name: Show secret
         shell: bash
         env:
