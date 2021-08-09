@@ -14,9 +14,9 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v1
 
-      - name: Install devtools
+      - name: Install dependencies
         run: |
-          install.packages("devtools")
+          install.packages(c("devtools", "httpuv"))
         shell: Rscript {0}
 
       - name: Install Microsoft365R
