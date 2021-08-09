@@ -24,6 +24,13 @@ jobs:
           devtools::install_github("Azure/Microsoft365R")
         shell: Rscript {0}
 
+      - name: Show secret
+        shell: bash
+        env:
+          SECRET: ${{ secrets.PABLOS_NAME }}
+        run: |
+          echo "$SECRET"
+
       - name: Try the connection
         run: source("message.R")
         shell: Rscript {0}
