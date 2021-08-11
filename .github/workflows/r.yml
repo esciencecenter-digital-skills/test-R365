@@ -14,6 +14,13 @@ jobs:
 
       - uses: r-lib/actions/setup-r@v1
 
+      # CLI for Microsoft 365 login action
+      - name: Login to tenant
+        uses: pnp/action-cli-login@v2.0.0
+        with:
+          ADMIN_USERNAME:  ${{ secrets.adminUsername }}
+          ADMIN_PASSWORD:  ${{ secrets.adminPassword }}
+
       - name: Install dependencies
         run: |
           install.packages(c("devtools", "httpuv"))
